@@ -57,7 +57,7 @@ const App: React.FC = () => {
         </div>
       </main>
       <footer className="text-center p-8 text-gray-400 dark:text-gray-500">
-        <p>&copy; 2024 Pizza Palace. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} Ciao Cacao. {language === 'ar' ? 'جميع الحقوق محفوظة' : 'All rights reserved.'}</p>
       </footer>
     </div>
   );
