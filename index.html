@@ -21,6 +21,14 @@
       body {
         font-family: 'Cairo', sans-serif;
       }
+      /* Utility to hide scrollbars */
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+      .scrollbar-hide {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+      }
     </style>
   <script type="importmap">
 {
