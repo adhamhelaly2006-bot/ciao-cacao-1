@@ -1,56 +1,42 @@
-
 import React from 'react';
-import ThemeToggle from './ThemeToggle';
 
 interface HeaderProps {
-  toggleTheme: () => void;
-  currentTheme: string;
-  language: string;
+    slogan: string;
+    availability: string;
+    timings: string;
+    address: string;
+    phone: string;
 }
 
-const Header: React.FC<HeaderProps> = ({ toggleTheme, currentTheme, language }) => {
-  return (
-    <header className="py-12 bg-white dark:bg-gray-900 shadow-md relative transition-colors duration-300">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 md:px-8 text-center">
-        <div className="absolute top-4 ltr:left-4 rtl:right-4">
-          <ThemeToggle toggleTheme={toggleTheme} currentTheme={currentTheme} />
-        </div>
-        <h1 className="text-6xl md:text-7xl font-black text-green-600 dark:text-green-400 tracking-tight">
-          Ciao Cacao
-        </h1>
-        <div className="mt-4 flex justify-center items-center">
-          <div className="w-16 h-1 bg-green-600 dark:bg-green-400 rounded-full"></div>
-        </div>
-        <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-          {language === 'ar' 
-            ? 'نحن نقدم لك أطباق مصنوعة بحب، مكونات طازجة و تجربة لا تنسى! 💚 في انتظارك نستمتع معاً' 
-            : 'We offer you dishes made with love, fresh ingredients, and an unforgettable experience! 💚 We are waiting for you to enjoy together'}
-        </p>
-
-        <div className="mt-8 space-y-3 text-lg text-gray-700 dark:text-gray-300">
-          <div className="flex items-center justify-center gap-3">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            <span>{language === 'ar' ? '3:00 صباحاً - 11:00 صباحاً' : '3:00 AM - 11:00 AM'}</span>
-          </div>
-          <div className="flex items-center justify-center gap-3">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
-            <span>{language === 'ar' ? 'طنطا شارع 306 سور سيتي كلوب من الكورنيش' : 'Tanta, 306 St, City Club Wall, from the Corniche'}</span>
-          </div>
-          <div className="flex items-center justify-center gap-3" dir="ltr">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-            </svg>
-            <a href="tel:01000167408" className="hover:text-green-600 dark:hover:text-green-400 transition-colors">01000167408</a>
-          </div>
-        </div>
-      </div>
-    </header>
-  );
+const Header: React.FC<HeaderProps> = ({ slogan, availability, timings, address, phone }) => {
+    return (
+        <header className="bg-white p-4 shadow-md">
+            <div className="container mx-auto text-center relative">
+                <h1 className="text-5xl font-black text-[#00916E] tracking-wider">Ciao Cacao</h1>
+                <div className="w-24 h-1 bg-[#00916E] mx-auto mt-2 mb-4"></div>
+                
+                <p className="mt-3 text-black max-w-lg mx-auto">
+                    {slogan}
+                    <br />
+                    {availability}
+                </p>
+                <div className="mt-4 space-y-2 text-black">
+                     <div className="flex items-center justify-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.414-1.414L11 9.586V6z" clipRule="evenodd" /></svg>
+                        <span>{timings}</span>
+                    </div>
+                    <a href="https://maps.app.goo.gl/2T76sR5BCRWsdAJV8?g_st=ipc" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 hover:text-[#00916E] hover:underline transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" /></svg>
+                        <span>{address}</span>
+                    </a>
+                    <a href={`tel:${phone}`} className="flex items-center justify-center gap-2 hover:text-[#00916E] hover:underline transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" /></svg>
+                        <span>{phone}</span>
+                    </a>
+                </div>
+            </div>
+        </header>
+    );
 };
 
 export default Header;

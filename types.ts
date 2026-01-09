@@ -1,17 +1,25 @@
 
 export interface MenuItem {
   name: string;
-  englishName: string;
-  price: string;
   description: string;
-  englishDescription: string;
-  note?: string;
-  englishNote?: string;
+  price: number;
 }
 
 export interface MenuCategory {
-  title: string;
   id: string;
-  englishTitle: string;
+  name: string;
   items: MenuItem[];
+}
+
+export interface HeaderTranslations {
+    slogan: string;
+    availability: string;
+    timings: string;
+    address: string;
+    phone: string;
+}
+
+export interface Translations {
+    header: HeaderTranslations;
+    menuData: MenuCategory[];
 }

@@ -1,267 +1,351 @@
 
-import type { MenuCategory } from './types';
+import { Translations } from './types';
 
-export const MENU_DATA: MenuCategory[] = [
-  {
-    title: "بيتزا جبن",
-    id: "pizza-cheese",
-    englishTitle: "Cheese Pizza",
-    items: [
-      { name: "مارجريتا", englishName: "Margherita", price: "165.00", description: "ريد صوص - موتزاريلا - جبنة بارميزان - زعتر - ريحان - زيت زيتون", englishDescription: "Red sauce - mozzarella - parmesan cheese - oregano - basil - olive oil" },
-      { name: "كواترو فورماجي", englishName: "Quattro Formaggi", price: "230.00", description: "وايت صوص - بلو تشيز - سكانمورزا - موتزاريلا - جبنة بارميزان - زعتر - ريحان - زيت زيتون", englishDescription: "White sauce - blue cheese - scamorza - mozzarella - parmesan cheese - oregano - basil - olive oil" },
-      { name: "بوراتا", englishName: "Burrata", price: "225.00", description: "ريد صوص - جبنة بوراتا - زيتون - رمان (موسمى) - جرجير إيطالي - عسل نحل - عين جمل - موتزاريلا جبنة بارميزان - زعتر - ريحان - زيت زيتون", englishDescription: "Red sauce - burrata cheese - olives - pomegranate (seasonal) - Italian arugula - honey - walnuts - mozzarella - parmesan cheese - oregano - basil - olive oil" }
-    ]
-  },
-  {
-    title: "بيتزا خضروات",
-    id: "pizza-vegetable",
-    englishTitle: "Vegetable Pizza",
-    items: [
-      { name: "مارينارا", englishName: "Marinara", price: "140.00", description: "ريد صوص - ثوم - بارميزان - زعتر - ريحان - زيت زيتون", englishDescription: "Red sauce - garlic - parmesan - oregano - basil - olive oil" },
-      { name: "فيجن", englishName: "Vegan", price: "175.00", description: "ريد صوص - بصل مكرمل - فلفل ألوان - مشروم - باذنجان هالبينو - ذرة حلوة - زعتر - ريحان - زيت زيتون", englishDescription: "Red sauce - caramelized onion - bell peppers - mushroom - eggplant - jalapeno - sweet corn - oregano - basil - olive oil" },
-      { name: "مشروم", englishName: "Mushroom", price: "185.00", description: "ريد صوص - مشروم - موتزاريلا - بارميزان - زعتر - ريحان - زيت زيتون", englishDescription: "Red sauce - mushroom - mozzarella - parmesan - oregano - basil - olive oil" }
-    ]
-  },
-  {
-    title: "بيتزا دجاج",
-    id: "pizza-chicken",
-    englishTitle: "Chicken Pizza",
-    items: [
-      { name: "تشيكن كرسبي", englishName: "Crispy Chicken", price: "225.00", description: "وايت صوص - دجاج مقلي - زيتون - موتزاريلا - بارميزان - زعتر - ريحان - زيت زيتون", englishDescription: "White sauce - fried chicken - olives - mozzarella - parmesan - oregano - basil - olive oil" },
-      { name: "جريلد تشيكن", englishName: "Grilled Chicken", price: "225.00", description: "وايت صوص - دجاج مشوي - مشروم - موتزاريلا - جبنة بارميزان - زعتر - ريحان - زيت زيتون", englishDescription: "White sauce - grilled chicken - mushroom - mozzarella - parmesan cheese - oregano - basil - olive oil" },
-      { name: "شيش طاووق", englishName: "Shish Tawook", price: "245.00", description: "وايت صوص - قطع شيش طاووق - حلقات بصل - موتزاريلا - جبنة بارميزان - زعتر - ريحان - زيت زيتون", englishDescription: "White sauce - shish tawook pieces - onion rings - mozzarella - parmesan cheese - oregano - basil - olive oil" }
-    ]
-  },
-  {
-    title: "بيتزا لحم",
-    id: "pizza-beef",
-    englishTitle: "Beef Pizza",
-    items: [
-      { name: "ميسكولارا لا كارني", englishName: "Misto di Carne", price: "245.00", description: "ريد صوص - سلامي - سجق - مشروم - بصل مكرمل - موتزاريلا - جبنة بارميزان - زعتر - ريحان - زيت زيتون", englishDescription: "Red sauce - salami - sausage - mushroom - caramelized onion - mozzarella - parmesan cheese - oregano - basil - olive oil" },
-      { name: "كاتيفو", englishName: "Cattivo", price: "225.00", description: "ريد صوص - سلامي - هالبينو موتزاريلا - جبنة بارميزان - زعتر - ريحان - زيت زيتون", englishDescription: "Red sauce - salami - jalapeno - mozzarella - parmesan cheese - oregano - basil - olive oil" },
-      { name: "كارنسيكا", englishName: "Carnica", price: "200.00", description: "ريد صوص - بسطرمة - طماطم شيري - جرجير إيطالي - زيتون - موتزاريلا - جبنة بارميزان - زعتر - ريحان - زيت زيتون", englishDescription: "Red sauce - pastrami - cherry tomatoes - Italian arugula - olives - mozzarella - parmesan cheese - oregano - basil - olive oil" },
-      { name: "سالسيشيا كونفيردي", englishName: "Salsiccia con Verde", price: "220.00", description: "ريد صوص - سجق - هالبينو - فلفل ألوان - زيتون - رمان (موسمى) - موتزاريلا - جبنة بارميزان - زعتر - ريحان - زيت زيتون", englishDescription: "Red sauce - sausage - jalapeno - bell peppers - olives - pomegranate (seasonal) - mozzarella - parmesan cheese - oregano - basil - olive oil" },
-      { name: "مينست ميت", englishName: "Minced Meat", price: "245.00", description: "ريد صوص - لحم مفروم - بصل - زيتون موتزاريلا - جبنة بارميزان - زعتر - ريحان - زيت زيتون", englishDescription: "Red sauce - minced meat - onion - olives - mozzarella - parmesan cheese - oregano - basil - olive oil" }
-    ]
-  },
-  {
-    title: "بيتزا سي فود",
-    id: "pizza-seafood",
-    englishTitle: "Seafood Pizza",
-    items: [
-      { name: "جمبري مشوي", englishName: "Grilled Shrimp", price: "300.00", description: "صوص من اختيارك - جمبري مشوي - مشروم - موتزاريلا - جبنة بارميزان - زعتر - ريحان - زيت زيتون", englishDescription: "Your choice of sauce - grilled shrimp - mushroom - mozzarella - parmesan cheese - oregano - basil - olive oil" },
-      { name: "جمبري كرسبي", englishName: "Crispy Shrimp", price: "300.00", description: "صوص من اختيارك - جمبري فرايد - زيتون - موتزاريلا - جبنة بارميزان - زعتر - ريحان - زيت زيتون", englishDescription: "Your choice of sauce - fried shrimp - olives - mozzarella - parmesan cheese - oregano - basil - olive oil" },
-      { name: "جمبري لابيستو", englishName: "Shrimp al Pesto", price: "320.00", description: "جمبري مشوى - صوص بيستو - موتزاريلا - جبنة بارميزان - زعتر - ريحان - زيت زيتون", englishDescription: "Grilled shrimp - pesto sauce - mozzarella - parmesan cheese - oregano - basil - olive oil" },
-      { name: "موندو مارينو", englishName: "Mondo Marino", price: "285.00", description: "صوص من اختيارك - جمبري مشوي - كاليماري - بلح بحر - أصابع كابوريا مشروم - موتزاريلا - جبنة بارميزان - زعتر - ريحان - زيت زيتون", englishDescription: "Your choice of sauce - grilled shrimp - calamari - mussels - crab sticks - mushroom - mozzarella - parmesan cheese - oregano - basil - olive oil" },
-      { name: "تونه", englishName: "Tuna", price: "255.00", description: "ريد صوص - تونة قطع - حلقات بصل - ذرة حلوة - موتزاريلا - جبنة بارميزان - زعتر - ريحان - زيت زيتون", englishDescription: "Red sauce - tuna chunks - onion rings - sweet corn - mozzarella - parmesan cheese - oregano - basil - olive oil" },
-      { name: "سالمون", englishName: "Salmon", price: "270.00", description: "صوص من اختيارك - قطع سالمون - زيتون - جرجير إيطالي ليمون - موتزاريلا - جبنة بارميزان - زعتر - ريحان - زيت زيتون", englishDescription: "Your choice of sauce - salmon pieces - olives - Italian arugula - lemon - mozzarella - parmesan cheese - oregano - basil - olive oil" },
-      { name: "أنشوجه", englishName: "Anchovy", price: "299.00", description: "ريد صوص - قطع أنشوجه - طماطم شيري - فلفل ألوان - موتزاريلا جبنة بارميزان - زعتر - ريحان - زيت زيتون", englishDescription: "Red sauce - anchovy pieces - cherry tomatoes - bell peppers - mozzarella - parmesan cheese - oregano - basil - olive oil" }
-    ]
-  },
-  {
-    title: "الحلويات",
-    id: "sweet-lovers",
-    englishTitle: "Desserts",
-    items: [
-      { name: "بيتزا نوتيلا كلاسيك", englishName: "Classic Nutella Pizza", price: "199.00", description: "نوتيلا - ماس كاربوني", englishDescription: "Nutella - mascarpone" },
-      { name: "إضافة مكسرات", englishName: "Add Nuts", price: "50.00", description: "", englishDescription: "" },
-      { name: "إضافة فواكه", englishName: "Add Fruits", price: "25.00", description: "", englishDescription: "" },
-      { name: "إضافة عسل", englishName: "Add Honey", price: "25.00", description: "", englishDescription: "" }
-    ]
-  },
-  {
-    title: "بيتزا ساندويتش",
-    id: "pizza-sandwich",
-    englishTitle: "Pizza Sandwiches",
-    items: [
-      { name: "ستيك مشوي", englishName: "Grilled Steak", price: "220.00", description: "قطع ستيك فيليه مشوي - موتزاريلا - جرجير إيطالي - بصل - مشروم - جبنة شيدر", englishDescription: "Grilled fillet steak pieces - mozzarella - Italian arugula - onion - mushroom - cheddar cheese" },
-      { name: "تشيكن بيستو", englishName: "Chicken Pesto", price: "240.00", description: "دجاج كرسبي - موتزاريلا - أمريكان شيز - صلصة بيستو - زيت زيتون", englishDescription: "Crispy chicken - mozzarella - American cheese - pesto sauce - olive oil" },
-      { name: "شيش طاووق", englishName: "Shish Tawook", price: "220.00", description: "قطع دجاج مشوي - بصل - فلفل ألوان - موتزاريلا - زيت زيتون", englishDescription: "Grilled chicken pieces - onion - bell peppers - mozzarella - olive oil" },
-      { name: "فيجن شيز", englishName: "Vegan Cheese", price: "185.00", description: "صلصة بيستو - موتزاريلا - حلقات بصل - أفوكادو - جرجير إيطالي - زيت زيتون", englishDescription: "Pesto sauce - mozzarella - onion rings - avocado - Italian arugula - olive oil" }
-    ]
-  },
-  {
-    title: "باستا كلاسيك",
-    id: "pasta-classic",
-    englishTitle: "Classic Pasta",
-    items: [
-      { name: "ريد", englishName: "Red", price: "90.00", description: "مكرونة من اختيارك - صوص ريد - جبنة بارميزان", englishDescription: "Your choice of pasta - red sauce - parmesan cheese" },
-      { name: "وايت", englishName: "White", price: "115.00", description: "مكرونة من اختيارك - صوص وايت - جبنة بارميزان", englishDescription: "Your choice of pasta - white sauce - parmesan cheese" },
-      { name: "براون", englishName: "Brown", price: "120.00", description: "مكرونة من اختيارك - صوص براون - جبنة بارميزان", englishDescription: "Your choice of pasta - brown sauce - parmesan cheese" },
-      { name: "بينك", englishName: "Pink", price: "95.00", description: "مكرونة من اختيارك - صوص بينك - جبنة بارميزان", englishDescription: "Your choice of pasta - pink sauce - parmesan cheese" },
-      { name: "بيستو", englishName: "Pesto", price: "165.00", description: "مكرونة من اختيارك - صوص بيستو - جبنة بارميزان", englishDescription: "Your choice of pasta - pesto sauce - parmesan cheese" },
-      { name: "أرابياتا", englishName: "Arrabbiata", price: "115.00", description: "مكرونة بينا - صوص مارينارا - جبنة بارميزان - خضروات", englishDescription: "Penne pasta - marinara sauce - parmesan cheese - vegetables" },
-      { name: "ماك البو", englishName: "Mac Elbow", price: "199.00", description: "مكرونة البو - صوص ماك - جبنة بارميزان", englishDescription: "Elbow macaroni - mac sauce - parmesan cheese" },
-      { name: "كواترو", englishName: "Quattro", price: "210.00", description: "مكرونة فيتوتشيني - موتزاريلا - شيدر أصفر - شيدر أحمر جبنة ريكفورد - جبنة بارميزان - أمريكان شيدر", englishDescription: "Fettuccine pasta - mozzarella - yellow cheddar - red cheddar - Roquefort cheese - parmesan cheese - American cheddar" }
-    ]
-  },
-  {
-    title: "باستا دجاج",
-    id: "pasta-chicken",
-    englishTitle: "Chicken Pasta",
-    items: [
-      { name: "نجرسكو", englishName: "Negresco", price: "220.00", description: "مكرونة فوتوتشيني - جريلد تشيكن - صوص نجرسكو - جبنة موتزاريلا - جبنة بارميزان", englishDescription: "Fettuccine pasta - grilled chicken - Negresco sauce - mozzarella cheese - parmesan cheese" },
-      { name: "ألفريدو", englishName: "Alfredo", price: "195.00", description: "مكرونة فوتوتشيني - جريلد تشيكن - صوص ألفريدو - مشروم - جبنة بارميزان", englishDescription: "Fettuccine pasta - grilled chicken - Alfredo sauce - mushroom - parmesan cheese" },
-      { name: "كوردون بلو", englishName: "Cordon Bleu", price: "180.00", description: "مكرونة من اختيارك - أصابع كوردون بلو - جبنة بارميزان", englishDescription: "Your choice of pasta - Cordon Bleu sticks - parmesan cheese" },
-      { name: "تشيكن كريسبي", englishName: "Crispy Chicken", price: "180.00", description: "مكرونة من اختيارك - قطع دجاج كريسبي - جبنة بارميزان", englishDescription: "Your choice of pasta - crispy chicken pieces - parmesan cheese" },
-      { name: "شيش طاووق", englishName: "Shish Tawook", price: "175.00", description: "مكرونة من اختيارك - قطع دجاج شيش - جبنة بارميزان", englishDescription: "Your choice of pasta - Shish Tawook pieces - parmesan cheese" },
-      { name: "تشيكن ماك", englishName: "Chicken Mac", price: "235.00", description: "مكرونة دوبل إلبو - دجاج من اختيارك (جريلد - كريسبي كوردون بلو) - صوص الماك - جبنة بارميزان", englishDescription: "Double elbow macaroni - your choice of chicken (grilled - crispy - cordon bleu) - mac sauce - parmesan cheese", note: "وتقدم مع صوص من إختيارك (رانش - تكساس - باربيكيو - مايونيز - سويت شيلي)", englishNote: "Served with your choice of sauce (Ranch - Texas - BBQ - Mayonnaise - Sweet Chili)" },
-      { name: "تشيكن رانش", englishName: "Chicken Ranch", price: "185.00", description: "مكرونة بينا - صوص وايت - فرايد تشيكن - صوص رانش - جبنة بارميزان", englishDescription: "Penne pasta - white sauce - fried chicken - ranch sauce - parmesan cheese" },
-      { name: "تشيكن تكساس", englishName: "Chicken Texas", price: "185.00", description: "مكرونة بينا - صوص وايت - فرايد تشيكن - صوص تكساس - جبنة بارميزان", englishDescription: "Penne pasta - white sauce - fried chicken - Texas sauce - parmesan cheese" },
-      { name: "سبانيش", englishName: "Spinach", price: "185.00", description: "مكرونة فيتوتشيني - صوص سبانيتشي - جريلد تشيكن - فلفل - مشروم - جبنة بارميزان", englishDescription: "Fettuccine pasta - spinach sauce - grilled chicken - pepper - mushroom - parmesan cheese" },
-      { name: "كاربونارا", englishName: "Carbonara", price: "235.00", description: "مكرونة فيتوتشيني - تركي مدخن - بيف مدخن - جريلد تشيكن - ذرة حلوة - جبنة بارميزان", englishDescription: "Fettuccine pasta - smoked turkey - smoked beef - grilled chicken - sweet corn - parmesan cheese" },
-      { name: "نابولي", englishName: "Napoli", price: "199.00", description: "مكرونة بينا - صوص نابولي - جريلد تشيكن - مشروم - زيت زيتون - جبنة بارميزان", englishDescription: "Penne pasta - Napoli sauce - grilled chicken - mushroom - olive oil - parmesan cheese" },
-      { name: "جريلد تشيكن", englishName: "Grilled Chicken", price: "185.00", description: "مكرونة بينا - صوص من اختيارك - جريلد تشيكن - جبنة بارميزان", englishDescription: "Penne pasta - your choice of sauce - grilled chicken - parmesan cheese" }
-    ]
-  },
-  {
-    title: "باستا لحم",
-    id: "pasta-beef",
-    englishTitle: "Beef Pasta",
-    items: [
-      { name: "بوافر", englishName: "Poivre", price: "250.00", description: "مكرونة إلبو - صوص بواقر - قطع بيف فلتو – بارميزان", englishDescription: "Elbow macaroni - poivre sauce - beef fillet pieces - parmesan" },
-      { name: "براون بيف", englishName: "Brown Beef", price: "245.00", description: "مكرونة بينا - صوص براون - قطع بيف فلتو – بارميزان", englishDescription: "Penne pasta - brown sauce - beef fillet pieces - parmesan" },
-      { name: "لازانيا بيف", englishName: "Beef Lasagna", price: "235.00", description: "مكرونة لازانيا شرائح - لحم مفروم مع صوص اللازانيا الإيطالي - موتزاريلا – بارميزان", englishDescription: "Lasagna sheets - minced meat with Italian lasagna sauce - mozzarella - parmesan" },
-      { name: "بولونيز", englishName: "Bolognese", price: "140.00", description: "مكرونة بينا - صوص مارينارا - خضروات - بارميزان", englishDescription: "Penne pasta - marinara sauce - vegetables - parmesan" },
-      { name: "برجر باستا", englishName: "Burger Pasta", price: "185.00", description: "مكرونة بينا - صوص من اختيارك - قطعة بيف برجر – بارميزان", englishDescription: "Penne pasta - your choice of sauce - beef burger patty - parmesan" }
-    ]
-  },
-  {
-    title: "باستا سي فود",
-    id: "pasta-seafood",
-    englishTitle: "Seafood Pasta",
-    items: [
-      { name: "باستا جمبري", englishName: "Shrimp Pasta", price: "250.00", description: "مكرونة بينا - صوص من اختيارك - جمبري كبير \"جريلد أو مشوي\" - بارميزان", englishDescription: "Penne pasta - your choice of sauce - large shrimp (grilled) - parmesan" },
-      { name: "سي فود باستا", englishName: "Seafood Pasta", price: "245.00", description: "مكرونة بينا - صوص من اختيارك - جمبري كبير مشوي - أصابع كابوريا - كاليماري - بارميزان", englishDescription: "Penne pasta - your choice of sauce - large grilled shrimp - crab sticks - calamari - parmesan" }
-    ]
-  },
-  {
-    title: "ساندويتش دجاج",
-    id: "sandwich-chicken",
-    englishTitle: "Chicken Sandwiches",
-    items: [
-      { name: "جريلد تشيكن", englishName: "Grilled Chicken", price: "120.00", description: "شرائح الدجاج المشوي - خس - مايونيز - خيار – طماطم", englishDescription: "Grilled chicken slices - lettuce - mayonnaise - cucumber - tomato" },
-      { name: "فاهيتا", englishName: "Fajita", price: "155.00", description: "قطع فاهيتا دجاج - صوص فاهيتا - خضروات - ميكس جبن", englishDescription: "Chicken fajita pieces - fajita sauce - vegetables - mixed cheese", note: "تقدم في عيش تورتيلا", englishNote: "Served in a tortilla" },
-      { name: "فيلادلفيا", englishName: "Philadelphia", price: "125.00", description: "قطع الدجاج المشوي - صوص فيلادلفيا - خضروات – موتزاريلا", englishDescription: "Grilled chicken pieces - Philadelphia sauce - vegetables - mozzarella" },
-      { name: "شيش طاووق", englishName: "Shish Tawook", price: "110.00", description: "قطع الشيش المشوي - خس – مايونيز", englishDescription: "Grilled shish tawook pieces - lettuce - mayonnaise" },
-      { name: "كوردون بلو", englishName: "Cordon Bleu", price: "170.00", description: "أصابع كوردون بلو - خس - طماطم - خيار مخلل - صوص جبنة", englishDescription: "Cordon bleu sticks - lettuce - tomato - pickles - cheese sauce" },
-      { name: "تشيكن كرسبي", englishName: "Crispy Chicken", price: "99.00", description: "قطع الدجاج المقلية - خس - طماطم - خيار مخلل – مايونيز", englishDescription: "Fried chicken pieces - lettuce - tomato - pickles - mayonnaise" },
-      { name: "تكساس", englishName: "Texas", price: "115.00", description: "شرائح الدجاج المشوي - صوص تكساس - خس - مايونيز - خيار – طماطم", englishDescription: "Grilled chicken slices - Texas sauce - lettuce - mayonnaise - cucumber - tomato" },
-      { name: "تشيكن رانش", englishName: "Chicken Ranch", price: "115.00", description: "شرائح الدجاج المشوي - صوص رانش - خس - مايونيز - خيار – طماطم", englishDescription: "Grilled chicken slices - ranch sauce - lettuce - mayonnaise - cucumber - tomato" },
-      { name: "تشيكن شيز مشروم", englishName: "Chicken Cheese Mushroom", price: "140.00", description: "شرائح الدجاج المشوي - مشروم - موتزاريلا - صوص جبنة", englishDescription: "Grilled chicken slices - mushroom - mozzarella - cheese sauce" }
-    ]
-  },
-  {
-    title: "ساندويتش لحم",
-    id: "sandwich-beef",
-    englishTitle: "Beef Sandwiches",
-    items: [
-      { name: "ستيك مشوي", englishName: "Grilled Steak", price: "195.00", description: "قطع بيف فيليه مشوي - صوص تكساس - خس - مشروم - خيار مخلل – بصل", englishDescription: "Grilled beef fillet pieces - Texas sauce - lettuce - mushroom - pickles - onion" },
-      { name: "بيف فاهيتا", englishName: "Beef Fajita", price: "230.00", description: "قطع بيف مشوي - صوص فاهيتا - خضروات - ميكس جبن", englishDescription: "Grilled beef pieces - fajita sauce - vegetables - mixed cheese", note: "تقدم في عيش تورتيلا", englishNote: "Served in a tortilla" }
-    ]
-  },
-  {
-    title: "ساندويتش سي فود",
-    id: "sandwich-seafood",
-    englishTitle: "Seafood Sandwiches",
-    items: [
-      { name: "جمبري", englishName: "Shrimp", price: "220.00", description: "جمبري كبير - صوص سي فود - صوص تارتار - خيار مخلل – خس", englishDescription: "Large shrimp - seafood sauce - tartar sauce - pickles - lettuce", note: "مقلي أو مشوي", englishNote: "Fried or grilled" },
-      { name: "سي فود", englishName: "Seafood", price: "230.00", description: "جمبري كبير مشوي - كاليماري - أصابع كابوريا - صوص تارتار - خيار مخلل – خس", englishDescription: "Large grilled shrimp - calamari - crab sticks - tartar sauce - pickles - lettuce" }
-    ]
-  },
-  {
-    title: "برجر أمريكي",
-    id: "burger-american",
-    englishTitle: "American Burger",
-    items: [
-      { name: "برجر كلاسيك", englishName: "Classic Burger", price: "110.00", description: "قطعة برجر مشوي - خس - طماطم - مايونيز - بصل - خيار مخلل", englishDescription: "Grilled burger patty - lettuce - tomato - mayonnaise - onion - pickles" },
-      { name: "برجر جبنة", englishName: "Cheese Burger", price: "149.00", description: "قطعة برجر مشوي - شرائح جبنة - صوص جبنة - خس - طماطم - مايونيز - بصل - خيار مخلل", englishDescription: "Grilled burger patty - cheese slices - cheese sauce - lettuce - tomato - mayonnaise - onion - pickles" },
-      { name: "برجر تكساس", englishName: "Texas Burger", price: "175.00", description: "قطعة برجر مشوي - بيف مدخن - صوص تكساس - خس - طماطم - مايونيز - بصل - خيار مخلل", englishDescription: "Grilled burger patty - smoked beef - Texas sauce - lettuce - tomato - mayonnaise - onion - pickles" },
-      { name: "برجر رانش", englishName: "Ranch Burger", price: "175.00", description: "قطعة برجر مشوي - تركي مدخن - صوص رانش - خس - طماطم - مايونيز - بصل - خيار مخلل", englishDescription: "Grilled burger patty - smoked turkey - ranch sauce - lettuce - tomato - mayonnaise - onion - pickles" },
-      { name: "أونيون برجر", englishName: "Onion Burger", price: "160.00", description: "قطعة برجر مشوي - حلقات بصل - مشروم - خس - طماطم - مايونيز - خيار مخلل", englishDescription: "Grilled burger patty - onion rings - mushroom - lettuce - tomato - mayonnaise - pickles" },
-      { name: "برجر موتزاريلا", englishName: "Mozzarella Burger", price: "135.00", description: "قطعة برجر مشوي - أصابع موتزاريلا - طماطم - خس - بصل - خيار مخلل", englishDescription: "Grilled burger patty - mozzarella sticks - tomato - lettuce - onion - pickles" },
-      { name: "هيكوري برجر", englishName: "Hickory Burger", price: "160.00", description: "قطعة برجر مشوي - صوص باربيكيو - سلامي - جبنة شرائح - خس - طماطم-مايونيز - بصل - مايونيز - خيار مخلل", englishDescription: "Grilled burger patty - BBQ sauce - salami - cheese slice - lettuce - tomato - mayonnaise - onion - pickles" },
-      { name: "برجر شيلي", englishName: "Chili Burger", price: "115.00", description: "قطعة برجر مشوي - هاليبينو - صوص شيلي - طماطم - مايونيز - بصل - خس - خيار مخلل", englishDescription: "Grilled burger patty - jalapeno - chili sauce - tomato - mayonnaise - onion - lettuce - pickles" }
-    ]
-  },
-  {
-    title: "سماش برجر",
-    id: "burger-smash",
-    englishTitle: "Smash Burger",
-    items: [
-      { name: "كلاسيك سماش برجر", englishName: "Classic Smash Burger", price: "120.00", description: "2 قطعة برجر مشوي - بصل مكرمل - مايونيز - خس - طماطم - خيار مخلل", englishDescription: "2 grilled burger patties - caramelized onion - mayonnaise - lettuce - tomato - pickles" },
-      { name: "شيز سماش برجر", englishName: "Cheese Smash Burger", price: "135.00", description: "2 قطعة برجر مشوي - شرائح جبنة - صوص جبنة - بصل مكرمل - خس - طماطم - مايونيز - بصل - خيار مخلل", englishDescription: "2 grilled burger patties - cheese slices - cheese sauce - caramelized onion - lettuce - tomato - mayonnaise - onion - pickles" },
-      { name: "سماش تكساس برجر", englishName: "Smash Texas Burger", price: "175.00", description: "2 قطعة برجر مشوي - بيف مدخن - صوص تكساس - بصل مكرمل - مايونيز - خس - طماطم - خيار مخلل", englishDescription: "2 grilled burger patties - smoked beef - Texas sauce - caramelized onion - mayonnaise - lettuce - tomato - pickles" },
-      { name: "سماش رانش برجر", englishName: "Smash Ranch Burger", price: "175.00", description: "2 قطعة برجر مشوي - تركي مدخن - صوص رانش - بصل مكرمل - مايونيز - خس - طماطم - خيار مخلل", englishDescription: "2 grilled burger patties - smoked turkey - ranch sauce - caramelized onion - mayonnaise - lettuce - tomato - pickles" },
-      { name: "أونيون سماش برجر", englishName: "Onion Smash Burger", price: "155.00", description: "2قطعة برجر مشوي - حلقات بصل - مشروم - بصل مكرمل - مايونيز - خس - طماطم - خيار مخلل", englishDescription: "2 grilled burger patties - onion rings - mushroom - caramelized onion - mayonnaise - lettuce - tomato - pickles" },
-      { name: "سماش موتزاريلا برجر", englishName: "Smash Mozzarella Burger", price: "135.00", description: "2 قطعة برجر مشوي - أصابع موتزاريلا - بصل مكرمل - مايونيز - خس - طماطم - خيار مخلل", englishDescription: "2 grilled burger patties - mozzarella sticks - caramelized onion - mayonnaise - lettuce - tomato - pickles" },
-      { name: "هيكورى سماش برجر", englishName: "Hickory Smash Burger", price: "130.00", description: "2 قطعة برجر مشوي - سلامي - صوص باربيكيو - شرائح جبنة - بصل مكرمل - مايونيز - خس - طماطم - خيار مخلل", englishDescription: "2 grilled burger patties - salami - BBQ sauce - cheese slice - caramelized onion - mayonnaise - lettuce - tomato - pickles" },
-      { name: "سماش شيلي برجر", englishName: "Smash Chili Burger", price: "125.00", description: "2 قطعة برجر مشوي - هالبينو - صوص شيلي - بصل مكرمل - مايونيز - خس - طماطم - خيار مخلل", englishDescription: "2 grilled burger patties - jalapeno - chili sauce - caramelized onion - mayonnaise - lettuce - tomato - pickles" },
-      { name: "سماش سكالوبيني", englishName: "Smash Scallopini", price: "185.00", description: "2 قطعة برجر مشوي - سلامي - كريمة - صوص سكالوبيني - بصل مكرمل - مايونيز - خس - طماطم - خيار مخلل", englishDescription: "2 grilled burger patties - salami - cream - scallopini sauce - caramelized onion - mayonnaise - lettuce - tomato - pickles" },
-      { name: "برجر سماش تريبل", englishName: "Triple Smash Burger", price: "210.00", description: "3 قطع برجر مشوي - جبنة شرائح - صوص جبنة - بيف مدخن - تركي مدخن - بصل مكرمل - مايونيز خس - طماطم - خيار مخلل", englishDescription: "3 grilled burger patties - cheese slice - cheese sauce - smoked beef - smoked turkey - caramelized onion - mayonnaise - lettuce - tomato - pickles" }
-    ]
-  },
-  {
-    title: "المقبلات",
-    id: "appetizers",
-    englishTitle: "Appetizers",
-    items: [
-      { name: "ويدجز", englishName: "Wedges", price: "30.00", description: "", englishDescription: "" },
-      { name: "أونيون رينج", englishName: "Onion Rings", price: "49.00", description: "", englishDescription: "" },
-      { name: "موتزاريلا ستيك", englishName: "Mozzarella Sticks", price: "55.00", description: "", englishDescription: "" },
-      { name: "ستربس", englishName: "Strips", price: "120.00", description: "", englishDescription: "" },
-      { name: "كرينكل", englishName: "Crinkle Fries", price: "49.00", description: "", englishDescription: "" }
-    ]
-  },
-  {
-    title: "السلطات",
-    id: "salad",
-    englishTitle: "Salads",
-    items: [
-      { name: "سيزر سالاد", englishName: "Caesar Salad", price: "185.00", description: "خس كابوتشا - صوص سيزر - جريلد شيكن - جبنة بارميزان", englishDescription: "Lettuce - Caesar sauce - grilled chicken - parmesan cheese" },
-      { name: "جريك سالاد", englishName: "Greek Salad", price: "99.00", description: "خس كابوتشا - خيار - طماطم - جبنة فيتا - زيت زيتون - زيتون شرائح - حلقات بصل - زعتر - جبنة بارميزان", englishDescription: "Lettuce - cucumber - tomato - feta cheese - olive oil - sliced olives - onion rings - oregano - parmesan cheese" },
-      { name: "كول سلو", englishName: "Coleslaw", price: "30.00", description: "كرنب - جزر - مايونيز - عسل نحل", englishDescription: "Cabbage - carrots - mayonnaise - honey" },
-      { name: "تونة باستا سالاد", englishName: "Tuna Pasta Salad", price: "160.00", description: "تونة قطع - مكرونة إلبو - فلفل - بصل - ليمون - زيتون شرائح", englishDescription: "Tuna chunks - elbow macaroni - pepper - onion - lemon - sliced olives" }
-    ]
-  },
-  {
-    title: "الإضافات",
-    id: "extras",
-    englishTitle: "Extras",
-    items: [
-      { name: "تركي مدخن", englishName: "Smoked Turkey", price: "30.00", description: "", englishDescription: "" },
-      { name: "سجق", englishName: "Sausage", price: "25.00", description: "", englishDescription: "" },
-      { name: "بسطرمة", englishName: "Pastrami", price: "30.00", description: "", englishDescription: "" },
-      { name: "بيف مدخن", englishName: "Smoked Beef", price: "30.00", description: "", englishDescription: "" },
-      { name: "قطع بيف فيليه", englishName: "Beef Fillet Pieces", price: "60.00", description: "", englishDescription: "" },
-      { name: "سلامي", englishName: "Salami", price: "30.00", description: "", englishDescription: "" },
-      { name: "صوص تارتار", englishName: "Tartar Sauce", price: "25.00", description: "", englishDescription: "" },
-      { name: "جبنة ريكفورد", englishName: "Roquefort Cheese", price: "30.00", description: "", englishDescription: "" },
-      { name: "جبنة موتزاريلا", englishName: "Mozzarella Cheese", price: "25.00", description: "", englishDescription: "" },
-      { name: "جبنة بارميزان", englishName: "Parmesan Cheese", price: "40.00", description: "", englishDescription: "" },
-      { name: "هاليبينو", englishName: "Jalapeno", price: "15.00", description: "", englishDescription: "" },
-      { name: "مشروم", englishName: "Mushroom", price: "25.00", description: "", englishDescription: "" },
-      { name: "زيتون شرائح", englishName: "Sliced Olives", price: "15.00", description: "", englishDescription: "" },
-      { name: "أمريكان شيدر", englishName: "American Cheddar", price: "20.00", description: "", englishDescription: "" },
-      { name: "صوص شيدر", englishName: "Cheddar Sauce", price: "30.00", description: "", englishDescription: "" },
-      { name: "صوص بيستو", englishName: "Pesto Sauce", price: "30.00", description: "", englishDescription: "" },
-      { name: "صوص سيزر", englishName: "Caesar Sauce", price: "30.00", description: "", englishDescription: "" },
-      { name: "صوص باربيكيو", englishName: "BBQ Sauce", price: "25.00", description: "", englishDescription: "" },
-      { name: "صوص رانش", englishName: "Ranch Sauce", price: "25.00", description: "", englishDescription: "" },
-      { name: "مايونيز", englishName: "Mayonnaise", price: "25.00", description: "", englishDescription: "" },
-      { name: "صوص تكساس", englishName: "Texas Sauce", price: "25.00", description: "", englishDescription: "" }
-    ]
-  },
-  {
-    title: "المشروبات",
-    id: "drinks",
-    englishTitle: "Drinks",
-    items: [
-      { name: "مياه معدنية صغيره", englishName: "Small Mineral Water", price: "10.00", description: "", englishDescription: "" },
-      { name: "بيبسي", englishName: "Pepsi", price: "25.00", description: "", englishDescription: "" },
-      { name: "سفن اب", englishName: "7 Up", price: "25.00", description: "", englishDescription: "" },
-      { name: "ميرندا", englishName: "Mirinda", price: "25.00", description: "", englishDescription: "" },
-      { name: "ريدبول", englishName: "Red Bull", price: "65.00", description: "", englishDescription: "" }
-    ]
-  }
-];
+export const translations: { [key: string]: Translations } = {
+    ar: {
+        header: {
+            slogan: "نحن نقدم لك أطباق مصنوعة بحب، مكونات طازجة و تجربة لا تنسى! 💚",
+            availability: "في انتظارك نستمتع معاً",
+            timings: "3:00 صباحاً - 11:00 صباحاً",
+            address: "طنطا شارع 306 سور سيتي كلوب من الكورنيش",
+            phone: "01000167408",
+        },
+        menuData: [
+            {id: 'pizza-cheese', name: 'بيتزا جبن', items: [
+                {name: 'مارجريتا', description: 'ريد صوص - موتزاريلا - جبنة بارميزان - زعتر - ريحان - زيت زيتون', price: 165},
+                {name: 'كواترو فورماجي', description: 'وايت صوص - بلو تشيز - سكامورزا - موتزاريلا - جبنة بارميزان - زعتر - ريحان - زيت زيتون', price: 230},
+                {name: 'بوراتا', description: 'ريد صوص - جبنة بوراتا - زيتون - رمان (موسمى) - جرجير إيطالي - عسل نحل - عين جمل - موتزاريلا جبنة بارميزان - زعتر - ريحان - زيت زيتون', price: 225},
+            ]},
+            {id: 'pizza-vegetable', name: 'بيتزا خضروات', items: [
+                {name: 'مارينارا', description: 'ريد صوص - ثوم - بارميزان - زعتر - ريحان - زيت زيتون', price: 140},
+                {name: 'فيجن', description: 'ريد صوص - بصل مكرمل - فلفل ألوان - مشروم - باذنجان هالبينو - ذرة حلوة - زعتر - ريحان - زيت زيتون', price: 175},
+                {name: 'مشروم', description: 'ريد صوص - مشروم - موتزاريلا - بارميزان - زعتر - ريحان - زيت زيتون', price: 185},
+            ]},
+            {id: 'pizza-chicken', name: 'بيتزا دجاج', items: [
+                {name: 'تشيكن كرسبي', description: 'وايت صوص - دجاج مقلي - زيتون - موتزاريلا - بارميزان - زعتر - ريحان - زيت زيتون', price: 225},
+                {name: 'جريلد تشيكن', description: 'وايت صوص - دجاج مشوي - مشروم - موتزاريلا - بارميزان - زعتر - ريحان - زيت زيتون', price: 225},
+                {name: 'شيش طاووق', description: 'وايت صوص - قطع شيش طاووق - حلقات بصل - موتزاريلا - جبنة بارميزان - زعتر - ريحان - زيت زيتون', price: 245},
+            ]},
+            {id: 'pizza-beef', name: 'بيتزا لحم', items: [
+                {name: 'ميسكولارا لا كارني', description: 'ريد صوص - سلامي - سجق - مشروم - بصل مكرمل - موتزاريلا - جبنة بارميزان - زعتر - ريحان - زيت زيتون', price: 245},
+                {name: 'كاتيفو', description: 'ريد صوص - سلامي - هالبينو موتزاريلا - جبنة بارميزان - زعتر - ريحان - زيت زيتون', price: 225},
+                {name: 'كارنسيكا', description: 'ريد صوص - بسطرمة - طماطم شيري - جرجير إيطالي - زيتون - موتزاريلا - جبنة بارميزان - زعتر - ريحان - زيت زيتون', price: 200},
+                {name: 'سالسيشيا كونفيردي', description: 'ريد صوص - سجق - هالبينو - فلفل ألوان - زيتون - رمان (موسمى) - موتزاريلا - جبنة بارميزان - زعتر - ريحان - زيت زيتون', price: 220},
+                {name: 'مينست ميت', description: 'ريد صوص - لحم مفروم - بصل - زيتون موتزاريلا - جبنة بارميزان - زعتر - ريحان - زيت زيتون', price: 245},
+            ]},
+            {id: 'pizza-seafood', name: 'بيتزا سي فود', items: [
+                {name: 'جمبري مشوي', description: 'صوص من اختيارك - جمبري مشوي - مشروم - موتزاريلا - جبنة بارميزان - زعتر - ريحان - زيت زيتون', price: 300},
+                {name: 'جمبري كرسبي', description: 'صوص من اختيارك - جمبري فرايد - زيتون - موتزاريلا - جبنة بارميزان - زعتر - ريحان - زيت زيتون', price: 300},
+                {name: 'جمبري لابيستو', description: 'جمبري مشوى - صوص بيستو - موتزاريلا - جبنة بارميزان - زعتر - ريحان - زيت زيتون', price: 320},
+                {name: 'موندو مارينو', description: 'صوص من اختيارك - جمبري مشوي - كاليماري - بلح بحر - أصابع كابوريا مشروم - موتزاريلا - جبنة بارميزان - زعتر - ريحان - زيت زيتون', price: 285},
+                {name: 'تونه', description: 'ريد صوص - تونة قطع - حلقات بصل - ذرة حلوة - موتزاريلا - جبنة بارميزان - زعتر - ريحان - زيت زيتون', price: 255},
+                {name: 'سالمون', description: 'صوص من اختيارك - قطع سالمون - زيتون - جرجير إيطالي ليمون - موتزاريلا - جبنة بارميزان - زعتر - ريحان - زيت زيتون', price: 270},
+                {name: 'أنشوجه', description: 'ريد صوص - قطع أنشوجه - طماطم شيري - فلفل ألوان - موتزاريلا جبنة بارميزان - زعتر - ريحان - زيت زيتون', price: 299},
+            ]},
+            {id: 'sweet-lovers', name: 'الحلويات', items: [
+                {name: 'بيتزا نوتيلا كلاسيك', description: '(نوتيلا - ماس كاربوني)', price: 199},
+                {name: 'إضافة مكسرات', description: '', price: 50},
+                {name: 'إضافة فواكه', description: '', price: 25},
+                {name: 'إضافة عسل', description: '', price: 25},
+            ]},
+            {id: 'pizza-sandwich', name: 'بيتزا ساندويتش', items: [
+                {name: 'ستيك مشوي', description: 'قطع ستيك فيليه مشوي - موتزاريلا - جرجير إيطالي - بصل - مشروم - جبنة شيدر', price: 220},
+                {name: 'تشيكن بيستو', description: 'دجاج كرسبي - موتزاريلا - أمريكان شيز - صلصة بيستو - زيت زيتون', price: 240},
+                {name: 'شيش طاووق', description: 'قطع دجاج مشوي - بصل - فلفل ألوان - موتزاريلا - زيت زيتون', price: 220},
+                {name: 'فيجن شيز', description: 'صلصة بيستو - موتزاريلا - حلقات بصل - أفوكادو - جرجير إيطالي - زيت زيتون', price: 185},
+            ]},
+            {id: 'pasta-classic', name: 'باستا كلاسيك', items: [
+                {name: 'ريد', description: 'مكرونة من اختيارك - صوص ريد - جبنة بارميزان', price: 90},
+                {name: 'وايت', description: 'مكرونة من اختيارك - صوص وايت - جبنة بارميزان', price: 115},
+                {name: 'براون', description: 'مكرونة من اختيارك - صوص براون - جبنة بارميزان', price: 120},
+                {name: 'بينك', description: 'مكرونة من اختيارك - صوص بينك - جبنة بارميزان', price: 95},
+                {name: 'بيستو', description: 'مكرونة من اختيارك - صوص بيستو - جبنة بارميزان', price: 165},
+                {name: 'أرابياتا', description: 'مكرونة بينا - صوص مارينارا - جبنة بارميزان - خضروات', price: 115},
+                {name: 'ماك البو', description: 'مكرونة البو - صوص ماك - جبنة بارميزان', price: 199},
+                {name: 'كواترو', description: 'مكرونة فيتوتشيني - موتزاريلا - شيدر أصفر - شيدر أحمر جبنة ريكفورد - جبنة بارميزان - أمريكان شيدر', price: 210},
+            ]},
+            {id: 'pasta-chicken', name: 'باستا دجاج', items: [
+                {name: 'نجرسكو', description: 'مكرونة فوتوتشيني - جريلد تشيكن - صوص نجرسكو - جبنة موتزاريلا - جبنة بارميزان', price: 220},
+                {name: 'ألفريدو', description: 'مكرونة فوتوتشيني - جريلد تشيكن - صوص ألفريدو - مشروم - جبنة بارميزان', price: 195},
+                {name: 'كوردون بلو', description: 'مكرونة من اختيارك - أصابع كوردون بلو - جبنة بارميزان', price: 180},
+                {name: 'تشيكن كريسبي', description: 'مكرونة من اختيارك - قطع دجاج كريسبي - جبنة بارميزان', price: 180},
+                {name: 'شيش طاووق', description: 'مكرونة من اختيارك - قطع دجاج شيش - جبنة بارميزان', price: 175},
+                {name: 'تشيكن ماك', description: 'مكرونة دوبل إلبو - دجاج من اختيارك (جريلد - كريسبي كوردون بلو) - صوص الماك - جبنة بارميزان. وتقدم مع صوص من إختيارك (رانش - تكساس - باربيكيو - مايونيز - سويت شيلي)', price: 235},
+                {name: 'تشيكن رانش', description: 'مكرونة بينا - صوص وايت - فرايد تشيكن - صوص رانش - جبنة بارميزان', price: 185},
+                {name: 'تشيكن تكساس', description: 'مكرونة بينا - صوص وايت - فرايد تشيكن - صوص تكساس - جبنة بارميزان', price: 185},
+                {name: 'سبانيش', description: 'مكرونة فيتوتشيني - صوص سبانيتشي - جريلد تشيكن - فلفل - مشروم - جبنة بارميزان', price: 185},
+                {name: 'كاربونارا', description: 'مكرونة فيتوتشيني - تركي مدخن - بيف مدخن - جريلد تشيكن - ذرة حلوة - جبنة بارميزان', price: 235},
+                {name: 'نابولي', description: 'مكرونة بينا - صوص نابولي - جريلد تشيكن - مشروم - زيت زيتون - جبنة بارميزان', price: 199},
+                {name: 'جريلد تشيكن', description: 'مكرونة بينا - صوص من اختيارك - جريلد تشيكن - جبنة بارميزان', price: 185},
+            ]},
+            {id: 'pasta-beef', name: 'باستا لحم', items: [
+                {name: 'بوافر', description: 'مكرونة إلبو - صوص بواقر - قطع بيف فلتو – بارميزان', price: 250},
+                {name: 'براون بيف', description: 'مكرونة بينا - صوص براون - قطع بيف فلتو – بارميزان', price: 245},
+                {name: 'لازانيا بيف', description: 'مكرونة لازانيا شرائح - لحم مفروم مع صوص اللازانيا الإيطالي - موتزاريلا – بارميزان', price: 235},
+                {name: 'بولونيز', description: 'مكرونة بينا - صوص مارينارا - خضروات - بارميزان', price: 140},
+                {name: 'برجر باستا', description: 'مكرونة بينا - صوص من اختيارك - قطعة بيف برجر – بارميزان', price: 185},
+            ]},
+            {id: 'pasta-seafood', name: 'باستا سي فود', items: [
+                {name: 'باستا جمبري', description: 'مكرونة بينا - صوص من اختيارك - جمبري كبير "جريلد" أو مشوي" - بارميزان', price: 250},
+                {name: 'سي فود باستا', description: 'مكرونة بينا - صوص من اختيارك - جمبري كبير مشوي - أصابع كابوريا - كاليماري - بارميزان', price: 245},
+            ]},
+            {id: 'sandwich-chicken', name: 'ساندويتش دجاج', items: [
+                {name: 'جريلد تشيكن', description: 'شرائح الدجاج المشوي - خس - مايونيز - خيار – طماطم', price: 120},
+                {name: 'فاهيتا', description: 'قطع فاهيتا دجاج - صوص فاهيتا - خضروات - ميكس جبن (تقدم في عيش تورتيلا)', price: 155},
+                {name: 'فيلادلفيا', description: 'قطع الدجاج المشوي - صوص فيلادلفيا - خضروات – موتزاريلا', price: 125},
+                {name: 'شيش طاووق', description: 'قطع الشيش المشوي - خس – مايونيز', price: 110},
+                {name: 'كوردون بلو', description: 'أصابع كوردون بلو - خس - طماطم - خيار مخلل - صوص جبنة', price: 170},
+                {name: 'تشيكن كرسبي', description: 'قطع الدجاج المقلية - خس - طماطم - خيار مخلل – مايونيز', price: 99},
+                {name: 'تكساس', description: 'شرائح الدجاج المشوي - صوص تكساس - خس - مايونيز - خيار – طماطم', price: 115},
+                {name: 'تشيكن رانش', description: 'شرائح الدجاج المشوي - صوص رانش - خس - مايونيز - خيار – طماطم', price: 115},
+                {name: 'تشيكن شيز مشروم', description: 'شرائح الدجاج المشوي - مشروم - موتزاريلا - صوص جبنة', price: 140},
+            ]},
+            {id: 'sandwich-beef', name: 'ساندويتش لحم', items: [
+                {name: 'ستيك مشوي', description: 'قطع بيف فيليه مشوي - صوص تكساس - خس - مشروم - خيار مخلل – بصل', price: 195},
+                {name: 'بيف فاهيتا', description: 'قطع بيف مشوي - صوص فاهيتا - خضروات - ميكس جبن (تقدم في عيش تورتيلا)', price: 230},
+            ]},
+            {id: 'sandwich-seafood', name: 'ساندويتش سي فود', items: [
+                {name: 'جمبري', description: 'جمبري كبير - صوص سي فود - صوص تارتار - خيار مخلل – خس (مقلي أو مشوي)', price: 220},
+                {name: 'سي فود', description: 'جمبري كبير مشوي - كاليماري - أصابع كابوريا - صوص تارتار - خيار مخلل – خس', price: 230},
+            ]},
+            {id: 'burger-american', name: 'برجر أمريكي', items: [
+                {name: 'برجر كلاسيك', description: 'قطعة برجر مشوي - خس - طماطم - مايونيز - بصل - خيار مخلل', price: 110},
+                {name: 'برجر جبنة', description: 'قطعة برجر مشوي - شرائح جبنة - صوص جبنة - خس - طماطم - مايونيز - بصل - خيار مخلل', price: 149},
+                {name: 'برجر تكساس', description: 'قطعة برجر مشوي - بيف مدخن - صوص تكساس - خس - طماطم - مايونيز - بصل - خيار مخلل', price: 175},
+                {name: 'برجر رانش', description: 'قطعة برجر مشوي - تركي مدخن - صوص رانش - خس - طماطم - مايونيز - بصل - خيار مخلل', price: 175},
+                {name: 'أونيون برجر', description: 'قطعة برجر مشوي - حلقات بصل - مشروم - خس - طماطم - مايونيز - خيار مخلل', price: 160},
+                {name: 'برجر موتزاريلا', description: 'قطعة برجر مشوي - أصابع موتزاريلا - طماطم - خس - بصل - خيار مخلل', price: 135},
+                {name: 'هيكوري برجر', description: 'قطعة برجر مشوي - صوص باربيكيو - سلامي - جبنة شرائح - خس - طماطم-مايونيز - بصل - مايونيز - خيار مخلل', price: 160},
+                {name: 'برجر شيلي', description: 'قطعة برجر مشوي - هاليبينو - صوص شيلي - طماطم - مايونيز - بصل - خس - خيار مخلل', price: 115},
+            ]},
+            {id: 'burger-smash', name: 'سماش برجر', items: [
+                {name: 'كلاسيك سماش برجر', description: '2 قطعة برجر مشوي - بصل مكرمل - مايونيز - خس - طماطم - خيار مخلل', price: 120},
+                {name: 'شيز سماش برجر', description: '2 قطعة برجر مشوي - شرائح جبنة - صوص جبنة - بصل مكرمل - خس - طماطم - مايونيز - بصل - خيار مخلل', price: 135},
+                {name: 'سماش تكساس برجر', description: '2 قطعة برجر مشوي - بيف مدخن - صوص تكساس - بصل مكرمل - مايونيز - خس - طماطم - خيار مخلل', price: 175},
+                {name: 'سماش رانش برجر', description: '2 قطعة برجر مشوي - تركي مدخن - صوص رانش - بصل مكرمل - مايونيز - خس - طماطم - خيار مخلل', price: 175},
+                {name: 'أونيون سماش برجر', description: '2قطعة برجر مشوي - حلقات بصل - مشروم - بصل مكرمل - مايونيز - خس - طماطم - خيار مخلل', price: 155},
+                {name: 'سماش موتزاريلا برجر', description: '2 قطعة برجر مشوي - أصابع موتزاريلا - بصل مكرمل - مايونيز - خس - طماطم - خيار مخلل', price: 135},
+                {name: 'هيكورى سماش برجر', description: '2 قطعة برجر مشوي - سلامي - صوص باربيكيو - شرائح جبنة - بصل مكرمل - مايونيز - خس - طماطم - خيار مخلل', price: 130},
+                {name: 'سماش شيلي برجر', description: '2 قطعة برجر مشوي - هالبينو - صوص شيلي - بصل مكرمل - مايونيز - خس - طماطم - خيار مخلل', price: 125},
+                {name: 'سماش سكالوبيني', description: '2 قطعة برجر مشوي - سلامي - كريمة - صوص سكالوبيني - بصل مكرمل - مايونيز - خس - طماطم - خيار مخلل', price: 185},
+                {name: 'برجر سماش تريبل', description: '3 قطع برجر مشوي - جبنة شرائح - صوص جبنة - بيف مدخن - تركي مدخن - بصل مكرمل - مايونيز خس - طماطم - خيار مخلل', price: 210},
+            ]},
+            {id: 'appetizers', name: 'المقبلات', items: [
+                {name: 'ويدجز', description: '', price: 30},
+                {name: 'أونيون رينج', description: '', price: 49},
+                {name: 'موتزاريلا ستيك', description: '', price: 55},
+                {name: 'ستربس', description: '', price: 120},
+                {name: 'كرينكل', description: '', price: 49},
+            ]},
+            {id: 'salad', name: 'السلطات', items: [
+                {name: 'سيزر سالاد', description: 'خس كابوتشا - صوص سيزر - جريلد شيكن - جبنة بارميزان', price: 185},
+                {name: 'جريك سالاد', description: 'خس كابوتشا - خيار - طماطم - جبنة فيتا - زيت زيتون - زيتون شرائح - حلقات بصل - زعتر - جبنة بارميزان', price: 99},
+                {name: 'كول سلو', description: 'كرنب - جزر - مايونيز - عسل نحل', price: 30},
+                {name: 'تونة باستا سالاد', description: 'تونة قطع - مكرونة إلبو - فلفل - بصل - ليمون - زيتون شرائح', price: 160},
+            ]},
+            {id: 'extras', name: 'الإضافات', items: [
+                {name: 'تركي مدخن', description: '', price: 30},
+                {name: 'سجق', description: '', price: 25},
+                {name: 'بسطرمة', description: '', price: 30},
+                {name: 'بيف مدخن', description: '', price: 30},
+                {name: 'قطع بيف فيليه', description: '', price: 60},
+                {name: 'سلامي', description: '', price: 30},
+                {name: 'صوص تارتار', description: '', price: 25},
+                {name: 'جبنة ريكفورد', description: '', price: 30},
+                {name: 'جبنة موتزاريلا', description: '', price: 25},
+                {name: 'جبنة بارميزان', description: '', price: 40},
+                {name: 'هاليبينو', description: '', price: 15},
+                {name: 'مشروم', description: '', price: 25},
+                {name: 'زيتون شرائح', description: '', price: 15},
+                {name: 'أمريكان شيدر', description: '', price: 20},
+                {name: 'صوص شيدر', description: '', price: 30},
+                {name: 'صوص بيستو', description: '', price: 30},
+                {name: 'صوص سيزر', description: '', price: 30},
+                {name: 'صوص باربيكيو', description: '', price: 25},
+                {name: 'صوص رانش', description: '', price: 25},
+                {name: 'مايونيز', description: '', price: 25},
+                {name: 'صوص تكساس', description: '', price: 25},
+            ]},
+            {id: 'drinks', name: 'المشروبات', items: [
+                {name: 'مياه معدنية صغيره', description: '', price: 10},
+                {name: 'بيبسي', description: '', price: 25},
+                {name: 'سفن اب', description: '', price: 25},
+                {name: 'ميرندا', description: '', price: 25},
+                {name: 'ريدبول', description: '', price: 65},
+            ]},
+        ]
+    },
+    en: {
+        header: {
+            slogan: "We offer you dishes made with love, fresh ingredients, and an unforgettable experience! 💚",
+            availability: "Waiting for you to enjoy together",
+            timings: "3:00 AM - 11:00 AM",
+            address: "Tanta, 306 St., City Club Wall, from the Corniche",
+            phone: "01000167408",
+        },
+        menuData: [
+            {id: 'pizza-cheese', name: 'Cheese Pizza', items: [
+                {name: 'Margherita', description: 'Red sauce - mozzarella - parmesan - thyme - basil - olive oil', price: 165},
+                {name: 'Quattro Formaggi', description: 'White sauce - blue cheese - scamorza - mozzarella - parmesan - thyme - basil - olive oil', price: 230},
+                {name: 'Burrata', description: 'Red sauce - burrata cheese - olives - pomegranate (seasonal) - Italian arugula - honey - walnuts - mozzarella - parmesan - thyme - basil - olive oil', price: 225},
+            ]},
+            {id: 'pizza-vegetable', name: 'Vegetable Pizza', items: [
+                {name: 'Marinara', description: 'Red sauce - garlic - parmesan - thyme - basil - olive oil', price: 140},
+                {name: 'Vegan', description: 'Red sauce - caramelized onions - bell peppers - mushrooms - eggplant - jalapeño - sweet corn - thyme - basil - olive oil', price: 175},
+                {name: 'Mushroom', description: 'Red sauce - mushrooms - mozzarella - parmesan - thyme - basil - olive oil', price: 185},
+            ]},
+            {id: 'pizza-chicken', name: 'Chicken Pizza', items: [
+                {name: 'Crispy Chicken', description: 'White sauce - fried chicken - olives - mozzarella - parmesan - thyme - basil - olive oil', price: 225},
+                {name: 'Grilled Chicken', description: 'White sauce - grilled chicken - mushrooms - mozzarella - parmesan - thyme - basil - olive oil', price: 225},
+                {name: 'Shish Tawook', description: 'White sauce - shish tawook pieces - onion rings - mozzarella - parmesan - thyme - basil - olive oil', price: 245},
+            ]},
+            {id: 'pizza-beef', name: 'Beef Pizza', items: [
+                {name: 'Mescolara La Carne', description: 'Red sauce - salami - sausage - mushroom - caramelized onion - mozzarella - parmesan - thyme - basil - olive oil', price: 245},
+                {name: 'Cattivo', description: 'Red sauce - salami - jalapeño - mozzarella - parmesan - thyme - basil - olive oil', price: 225},
+                {name: 'Carneseca', description: 'Red sauce - pastrami - cherry tomatoes - Italian arugula - olives - mozzarella - parmesan - thyme - basil - olive oil', price: 200},
+                {name: 'Salsiccia Con Verde', description: 'Red sauce - sausage - jalapeño - bell peppers - olives - pomegranate (seasonal) - mozzarella - parmesan - thyme - basil - olive oil', price: 220},
+                {name: 'Minced Meat', description: 'Red sauce - minced meat - onion - olives - mozzarella - parmesan - thyme - basil - olive oil', price: 245},
+            ]},
+            {id: 'pizza-seafood', name: 'Seafood Pizza', items: [
+                {name: 'Grilled Shrimp', description: 'Your choice of sauce - grilled shrimp - mushroom - mozzarella - parmesan - thyme - basil - olive oil', price: 300},
+                {name: 'Crispy Shrimp', description: 'Your choice of sauce - fried shrimp - olives - mozzarella - parmesan - thyme - basil - olive oil', price: 300},
+                {name: 'Shrimp Pesto', description: 'Grilled shrimp - pesto sauce - mozzarella - parmesan - thyme - basil - olive oil', price: 320},
+                {name: 'Mondo Marino', description: 'Your choice of sauce - grilled shrimp - calamari - mussels - crab sticks - mushroom - mozzarella - parmesan - thyme - basil - olive oil', price: 285},
+                {name: 'Tuna', description: 'Red sauce - tuna chunks - onion rings - sweet corn - mozzarella - parmesan - thyme - basil - olive oil', price: 255},
+                {name: 'Salmon', description: 'Your choice of sauce - salmon pieces - olives - Italian arugula - lemon - mozzarella - parmesan - thyme - basil - olive oil', price: 270},
+                {name: 'Anchovy', description: 'Red sauce - anchovy pieces - cherry tomatoes - bell peppers - mozzarella - parmesan - thyme - basil - olive oil', price: 299},
+            ]},
+            {id: 'sweet-lovers', name: 'Sweet Lovers', items: [
+                {name: 'Classic Nutella Pizza', description: '(Nutella - Mascarpone)', price: 199},
+                {name: 'Add Nuts', description: '', price: 50},
+                {name: 'Add Fruits', description: '', price: 25},
+                {name: 'Add Honey', description: '', price: 25},
+            ]},
+            {id: 'pizza-sandwich', name: 'Pizza Sandwich', items: [
+                {name: 'Grilled Steak', description: 'Grilled fillet steak pieces - mozzarella - Italian arugula - onion - mushroom - cheddar cheese', price: 220},
+                {name: 'Chicken Pesto', description: 'Crispy chicken - mozzarella - American cheese - pesto sauce - olive oil', price: 240},
+                {name: 'Shish Tawook', description: 'Grilled chicken pieces - onion - bell peppers - mozzarella - olive oil', price: 220},
+                {name: 'Vegan Cheese', description: 'Pesto sauce - mozzarella - onion rings - avocado - Italian arugula - olive oil', price: 185},
+            ]},
+            {id: 'pasta-classic', name: 'Classic Pasta', items: [
+                {name: 'Red', description: 'Your choice of pasta - red sauce - parmesan cheese', price: 90},
+                {name: 'White', description: 'Your choice of pasta - white sauce - parmesan cheese', price: 115},
+                {name: 'Brown', description: 'Your choice of pasta - brown sauce - parmesan cheese', price: 120},
+                {name: 'Pink', description: 'Your choice of pasta - pink sauce - parmesan cheese', price: 95},
+                {name: 'Pesto', description: 'Your choice of pasta - pesto sauce - parmesan cheese', price: 165},
+                {name: 'Arrabbiata', description: 'Penne pasta - marinara sauce - parmesan cheese - vegetables', price: 115},
+                {name: 'Mac Elbo', description: 'Elbow pasta - mac sauce - parmesan cheese', price: 199},
+                {name: 'Quattro', description: 'Fettuccine pasta - mozzarella - yellow cheddar - red cheddar - Roquefort cheese - parmesan cheese - American cheddar', price: 210},
+            ]},
+            {id: 'pasta-chicken', name: 'Chicken Pasta', items: [
+                {name: 'Negresco', description: 'Fettuccine pasta - grilled chicken - negresco sauce - mozzarella - parmesan', price: 220},
+                {name: 'Alfredo', description: 'Fettuccine pasta - grilled chicken - Alfredo sauce - mushroom - parmesan', price: 195},
+                {name: 'Cordon Bleu', description: 'Your choice of pasta - cordon bleu fingers - parmesan', price: 180},
+                {name: 'Crispy Chicken', description: 'Your choice of pasta - crispy chicken pieces - parmesan', price: 180},
+                {name: 'Shish Tawook', description: 'Your choice of pasta - shish tawook pieces - parmesan', price: 175},
+                {name: 'Chicken Mac', description: 'Double elbow pasta - your choice of chicken (grilled - crispy - cordon bleu) - mac sauce - parmesan. Served with your choice of sauce (Ranch - Texas - BBQ - Mayonnaise - Sweet Chili)', price: 235},
+                {name: 'Chicken Ranch', description: 'Penne pasta - white sauce - fried chicken - ranch sauce - parmesan', price: 185},
+                {name: 'Chicken Texas', description: 'Penne pasta - white sauce - fried chicken - Texas sauce - parmesan', price: 185},
+                {name: 'Spanish', description: 'Fettuccine pasta - spinach sauce - grilled chicken - pepper - mushroom - parmesan', price: 185},
+                {name: 'Carbonara', description: 'Fettuccine pasta - smoked turkey - smoked beef - grilled chicken - sweet corn - parmesan', price: 235},
+                {name: 'Napoli', description: 'Penne pasta - Napoli sauce - grilled chicken - mushroom - olive oil - parmesan', price: 199},
+                {name: 'Grilled Chicken', description: 'Penne pasta - your choice of sauce - grilled chicken - parmesan', price: 185},
+            ]},
+            {id: 'pasta-beef', name: 'Beef Pasta', items: [
+                {name: 'Poivre', description: 'Elbow pasta - poivre sauce - beef fillet pieces - parmesan', price: 250},
+                {name: 'Brown Beef', description: 'Penne pasta - brown sauce - beef fillet pieces - parmesan', price: 245},
+                {name: 'Beef Lasagna', description: 'Lasagna slices - minced meat with Italian lasagna sauce - mozzarella - parmesan', price: 235},
+                {name: 'Bolognese', description: 'Penne pasta - marinara sauce - vegetables - parmesan', price: 140},
+                {name: 'Burger Pasta', description: 'Penne pasta - your choice of sauce - beef burger piece - parmesan', price: 185},
+            ]},
+            {id: 'pasta-seafood', name: 'Seafood Pasta', items: [
+                {name: 'Shrimp Pasta', description: 'Penne pasta - your choice of sauce - large shrimp "grilled or fried" - parmesan', price: 250},
+                {name: 'Seafood Pasta', description: 'Penne pasta - your choice of sauce - large grilled shrimp - crab sticks - calamari - parmesan', price: 245},
+            ]},
+            {id: 'sandwich-chicken', name: 'Chicken Sandwich', items: [
+                {name: 'Grilled Chicken', description: 'Grilled chicken slices - lettuce - mayonnaise - cucumber - tomato', price: 120},
+                {name: 'Fajita', description: 'Chicken fajita pieces - fajita sauce - vegetables - cheese mix (served in tortilla bread)', price: 155},
+                {name: 'Philadelphia', description: 'Grilled chicken pieces - Philadelphia sauce - vegetables - mozzarella', price: 125},
+                {name: 'Shish Tawook', description: 'Grilled shish pieces - lettuce - mayonnaise', price: 110},
+                {name: 'Cordon Bleu', description: 'Cordon bleu fingers - lettuce - tomato - pickles - cheese sauce', price: 170},
+                {name: 'Crispy Chicken', description: 'Fried chicken pieces - lettuce - tomato - pickles - mayonnaise', price: 99},
+                {name: 'Texas', description: 'Grilled chicken slices - Texas sauce - lettuce - mayonnaise - cucumber - tomato', price: 115},
+                {name: 'Chicken Ranch', description: 'Grilled chicken slices - ranch sauce - lettuce - mayonnaise - cucumber - tomato', price: 115},
+                {name: 'Chicken Cheese Mushroom', description: 'Grilled chicken slices - mushroom - mozzarella - cheese sauce', price: 140},
+            ]},
+            {id: 'sandwich-beef', name: 'Beef Sandwich', items: [
+                {name: 'Grilled Steak', description: 'Grilled beef fillet pieces - Texas sauce - lettuce - mushroom - pickles - onion', price: 195},
+                {name: 'Beef Fajita', description: 'Grilled beef pieces - fajita sauce - vegetables - cheese mix (served in tortilla bread)', price: 230},
+            ]},
+            {id: 'sandwich-seafood', name: 'Seafood Sandwich', items: [
+                {name: 'Shrimp', description: 'Large shrimp - seafood sauce - tartar sauce - pickles - lettuce (fried or grilled)', price: 220},
+                {name: 'Seafood', description: 'Large grilled shrimp - calamari - crab sticks - tartar sauce - pickles - lettuce', price: 230},
+            ]},
+            {id: 'burger-american', name: 'American Burger', items: [
+                {name: 'Classic Burger', description: 'Grilled burger patty - lettuce - tomato - mayonnaise - onion - pickles', price: 110},
+                {name: 'Cheese Burger', description: 'Grilled burger patty - cheese slices - cheese sauce - lettuce - tomato - mayonnaise - onion - pickles', price: 149},
+                {name: 'Texas Burger', description: 'Grilled burger patty - smoked beef - Texas sauce - lettuce - tomato - mayonnaise - onion - pickles', price: 175},
+                {name: 'Ranch Burger', description: 'Grilled burger patty - smoked turkey - ranch sauce - lettuce - tomato - mayonnaise - onion - pickles', price: 175},
+                {name: 'Onion Burger', description: 'Grilled burger patty - onion rings - mushroom - lettuce - tomato - mayonnaise - pickles', price: 160},
+                {name: 'Mozzarella Burger', description: 'Grilled burger patty - mozzarella sticks - tomato - lettuce - onion - pickles', price: 135},
+                {name: 'Hickory Burger', description: 'Grilled burger patty - BBQ sauce - salami - cheese slices - lettuce - tomato - mayonnaise - onion - pickles', price: 160},
+                {name: 'Chili Burger', description: 'Grilled burger patty - jalapeño - chili sauce - tomato - mayonnaise - onion - lettuce - pickles', price: 115},
+            ]},
+            {id: 'burger-smash', name: 'Smash Burger', items: [
+                {name: 'Classic Smash Burger', description: '2 grilled burger patties - caramelized onion - mayonnaise - lettuce - tomato - pickles', price: 120},
+                {name: 'Cheese Smash Burger', description: '2 grilled burger patties - cheese slices - cheese sauce - caramelized onion - lettuce - tomato - mayonnaise - onion - pickles', price: 135},
+                {name: 'Texas Smash Burger', description: '2 grilled burger patties - smoked beef - Texas sauce - caramelized onion - mayonnaise - lettuce - tomato - pickles', price: 175},
+                {name: 'Ranch Smash Burger', description: '2 grilled burger patties - smoked turkey - ranch sauce - caramelized onion - mayonnaise - lettuce - tomato - pickles', price: 175},
+                {name: 'Onion Smash Burger', description: '2 grilled burger patties - onion rings - mushroom - caramelized onion - mayonnaise - lettuce - tomato - pickles', price: 155},
+                {name: 'Mozzarella Smash Burger', description: '2 grilled burger patties - mozzarella sticks - caramelized onion - mayonnaise - lettuce - tomato - pickles', price: 135},
+                {name: 'Hickory Smash Burger', description: '2 grilled burger patties - salami - BBQ sauce - cheese slices - caramelized onion - mayonnaise - lettuce - tomato - pickles', price: 130},
+                {name: 'Chili Smash Burger', description: '2 grilled burger patties - jalapeño - chili sauce - caramelized onion - mayonnaise - lettuce - tomato - pickles', price: 125},
+                {name: 'Scallopini Smash Burger', description: '2 grilled burger patties - salami - cream - scallopini sauce - caramelized onion - mayonnaise - lettuce - tomato - pickles', price: 185},
+                {name: 'Triple Smash Burger', description: '3 grilled burger patties - cheese slices - cheese sauce - smoked beef - smoked turkey - caramelized onion - mayonnaise - lettuce - tomato - pickles', price: 210},
+            ]},
+            {id: 'appetizers', name: 'Appetizers', items: [
+                {name: 'Wedges', description: '', price: 30},
+                {name: 'Onion Rings', description: '', price: 49},
+                {name: 'Mozzarella Sticks', description: '', price: 55},
+                {name: 'Strips', description: '', price: 120},
+                {name: 'Crinkle Fries', description: '', price: 49},
+            ]},
+            {id: 'salad', name: 'Salads', items: [
+                {name: 'Caesar Salad', description: 'Lettuce - Caesar sauce - grilled chicken - parmesan cheese', price: 185},
+                {name: 'Greek Salad', description: 'Lettuce - cucumber - tomato - feta cheese - olive oil - sliced olives - onion rings - thyme - parmesan cheese', price: 99},
+                {name: 'Coleslaw', description: 'Cabbage - carrots - mayonnaise - honey', price: 30},
+                {name: 'Tuna Pasta Salad', description: 'Tuna chunks - elbow pasta - pepper - onion - lemon - sliced olives', price: 160},
+            ]},
+            {id: 'extras', name: 'Extras', items: [
+                {name: 'Smoked Turkey', description: '', price: 30},
+                {name: 'Sausage', description: '', price: 25},
+                {name: 'Pastrami', description: '', price: 30},
+                {name: 'Smoked Beef', description: '', price: 30},
+                {name: 'Beef Fillet Pieces', description: '', price: 60},
+                {name: 'Salami', description: '', price: 30},
+                {name: 'Tartar Sauce', description: '', price: 25},
+                {name: 'Roquefort Cheese', description: '', price: 30},
+                {name: 'Mozzarella Cheese', description: '', price: 25},
+                {name: 'Parmesan Cheese', description: '', price: 40},
+                {name: 'Jalapeño', description: '', price: 15},
+                {name: 'Mushroom', description: '', price: 25},
+                {name: 'Sliced Olives', description: '', price: 15},
+                {name: 'American Cheddar', description: '', price: 20},
+                {name: 'Cheddar Sauce', description: '', price: 30},
+                {name: 'Pesto Sauce', description: '', price: 30},
+                {name: 'Caesar Sauce', description: '', price: 30},
+                {name: 'BBQ Sauce', description: '', price: 25},
+                {name: 'Ranch Sauce', description: '', price: 25},
+                {name: 'Mayonnaise', description: '', price: 25},
+                {name: 'Texas Sauce', description: '', price: 25},
+            ]},
+            {id: 'drinks', name: 'Soft Drinks', items: [
+                {name: 'Small Mineral Water', description: '', price: 10},
+                {name: 'Pepsi', description: '', price: 25},
+                {name: '7 Up', description: '', price: 25},
+                {name: 'Mirinda', description: '', price: 25},
+                {name: 'Red Bull', description: '', price: 65},
+            ]},
+        ]
+    }
+};
