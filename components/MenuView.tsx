@@ -7,9 +7,11 @@ import MenuCategory from './MenuCategory';
 
 interface MenuViewProps {
     language: 'ar' | 'en';
+    theme: 'light' | 'dark';
+    toggleTheme: () => void;
 }
 
-const MenuView: React.FC<MenuViewProps> = ({ language }) => {
+const MenuView: React.FC<MenuViewProps> = ({ language, theme, toggleTheme }) => {
     const { header, menuData } = translations[language];
     const [activeCategory, setActiveCategory] = useState<string>(menuData[0]?.id || '');
 
@@ -62,6 +64,8 @@ const MenuView: React.FC<MenuViewProps> = ({ language }) => {
                 timings={header.timings}
                 address={header.address}
                 phone={header.phone}
+                theme={theme}
+                toggleTheme={toggleTheme}
             />
             <Navigation
                 categories={menuData}

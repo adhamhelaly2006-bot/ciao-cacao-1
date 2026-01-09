@@ -14,8 +14,39 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
     
     <style>
+      /* CSS Variables for Theming */
+      :root {
+        /* Dark Mode is the default */
+        --bg-color: #111827; /* gray-900 */
+        --text-color: #f9fafb; /* gray-50 */
+        --text-color-secondary: #9ca3af; /* gray-400 */
+        --card-bg: #1f2937; /* gray-800 */
+        --nav-bg: rgba(31, 41, 55, 0.8); /* gray-800 with opacity */
+        --nav-button-bg: #374151; /* gray-700 */
+        --nav-button-text: #ffffff;
+        --nav-button-hover-bg: #4b5563; /* gray-600 */
+        --header-icon-color: #9ca3af; /* gray-400 */
+        --ring-offset-color: #1f2937; /* gray-800 */
+      }
+
+      body.light-mode {
+        /* Light Mode Overrides */
+        --bg-color: #ffffff;
+        --text-color: #000000;
+        --text-color-secondary: #6b7280; /* gray-500 */
+        --card-bg: #ffffff;
+        --nav-bg: rgba(255, 255, 255, 0.8);
+        --nav-button-bg: #ffffff;
+        --nav-button-text: #000000;
+        --nav-button-hover-bg: #f3f4f6; /* gray-100 */
+        --header-icon-color: #6b7280; /* gray-500 */
+        --ring-offset-color: #ffffff;
+      }
+      
       body {
         font-family: 'Cairo', sans-serif; /* Default font */
+        background-color: var(--bg-color);
+        color: var(--text-color);
         transition-property: background-color, border-color, color, fill, stroke;
         transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
         transition-duration: 300ms;
@@ -43,7 +74,7 @@
 }
 </script>
 </head>
-<body class="bg-white">
+<body>
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
 </body>

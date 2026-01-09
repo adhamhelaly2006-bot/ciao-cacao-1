@@ -4,6 +4,27 @@ import MenuView from './components/MenuView';
 
 const App: React.FC = () => {
     const [language, setLanguage] = useState<'ar' | 'en' | null>(null);
+    const [theme, setTheme] = useState<'light' | 'dark'>(() => {
+        if (typeof window !== 'undefined' && window.localStorage) {
+            const storedTheme = window.localStorage.getItem('theme');
+            if (storedTheme === 'dark' || storedTheme === 'light') {
+                return storedTheme;
+            }
+            if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+                return 'light';
+            }
+        }
+        return 'dark';
+    });
+
+    useEffect(() => {
+        if (theme === 'light') {
+            document.body.classList.add('light-mode');
+        } else {
+            document.body.classList.remove('light-mode');
+        }
+        localStorage.setItem('theme', theme);
+    }, [theme]);
 
     useEffect(() => {
         if (language) {
@@ -17,11 +38,15 @@ const App: React.FC = () => {
         setLanguage(lang);
     };
 
+    const toggleTheme = () => {
+        setTheme(prevTheme => (prevTheme === 'light' ? 'dark' : 'light'));
+    };
+
     if (!language) {
         return <LanguageSelector onSelectLanguage={handleSelectLanguage} />;
     }
 
-    return <MenuView language={language} />;
+    return <MenuView language={language} theme={theme} toggleTheme={toggleTheme} />;
 };
 
 export default App;

@@ -7,12 +7,12 @@ interface MenuItemProps {
 
 const MenuItem: React.FC<MenuItemProps> = ({ item }) => {
     return (
-        <div className="bg-white rounded-lg shadow-sm overflow-hidden p-4 min-h-[80px] transition-colors duration-300">
+        <div className="bg-[--card-bg] rounded-lg shadow-sm overflow-hidden p-4 min-h-[80px] transition-colors duration-300">
             <div className="flex items-start justify-between gap-4 h-full">
                 <div className="text-start flex-grow">
-                    <h3 className="text-lg font-bold text-black">{item.name}</h3>
+                    <h3 className="text-lg font-bold text-[--text-color]">{item.name}</h3>
                     {item.description && (
-                         <p className="text-sm text-black mt-1">{item.description}</p>
+                         <p className="text-sm text-[--text-color-secondary] mt-1">{item.description}</p>
                     )}
                 </div>
                 <div className="flex-shrink-0 pt-1">
