@@ -10,7 +10,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ slogan, availability, timings, address, phone }) => {
     return (
-        <header className="bg-white p-4 shadow-md">
+        <header className="bg-white p-4 shadow-md transition-colors duration-300">
             <div className="container mx-auto text-center relative">
                 <h1 className="text-5xl font-black text-[#00916E] tracking-wider">Ciao Cacao</h1>
                 <div className="w-24 h-1 bg-[#00916E] mx-auto mt-2 mb-4"></div>

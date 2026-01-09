@@ -7,7 +7,7 @@ interface MenuItemProps {
 
 const MenuItem: React.FC<MenuItemProps> = ({ item }) => {
     return (
-        <div className="bg-white rounded-lg shadow-sm overflow-hidden p-4 min-h-[80px]">
+        <div className="bg-white rounded-lg shadow-sm overflow-hidden p-4 min-h-[80px] transition-colors duration-300">
             <div className="flex items-start justify-between gap-4 h-full">
                 <div className="text-start flex-grow">
                     <h3 className="text-lg font-bold text-black">{item.name}</h3>

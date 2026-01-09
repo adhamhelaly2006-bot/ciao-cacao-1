@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 interface LanguageSelectorProps {
@@ -7,7 +6,7 @@ interface LanguageSelectorProps {
 
 const LanguageSelector: React.FC<LanguageSelectorProps> = ({ onSelectLanguage }) => {
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen bg-white">
+        <div className="flex flex-col items-center justify-center min-h-screen bg-white transition-colors duration-300">
             <div className="text-center">
                  <h1 className="text-5xl font-black text-[#00916E] tracking-wider mb-8">Ciao Cacao</h1>
                 <h2 className="text-2xl font-bold text-black mb-6">Choose your language / اختر لغتك</h2>

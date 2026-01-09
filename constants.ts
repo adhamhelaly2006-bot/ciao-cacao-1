@@ -6,7 +6,7 @@ export const translations: { [key: string]: Translations } = {
         header: {
             slogan: "نحن نقدم لك أطباق مصنوعة بحب، مكونات طازجة و تجربة لا تنسى! 💚",
             availability: "في انتظارك نستمتع معاً",
-            timings: "3:00 صباحاً - 11:00 صباحاً",
+            timings: "11:00 صباحاً - 3:00 فجراً",
             address: "طنطا شارع 306 سور سيتي كلوب من الكورنيش",
             phone: "01000167408",
         },
@@ -98,7 +98,7 @@ export const translations: { [key: string]: Translations } = {
                 {name: 'تشيكن كرسبي', description: 'قطع الدجاج المقلية - خس - طماطم - خيار مخلل – مايونيز', price: 99},
                 {name: 'تكساس', description: 'شرائح الدجاج المشوي - صوص تكساس - خس - مايونيز - خيار – طماطم', price: 115},
                 {name: 'تشيكن رانش', description: 'شرائح الدجاج المشوي - صوص رانش - خس - مايونيز - خيار – طماطم', price: 115},
-                {name: 'تشيكن شيز مشروم', description: 'شرائح الدجاج المشوي - مشروم - موتزاريلا - صوص جبنة', price: 140},
+                {name: 'تشيكن شيز مشروم', description: 'شرائح الدجاج المشوي - مشروم - موتzاريلا - صوص جبنة', price: 140},
             ]},
             {id: 'sandwich-beef', name: 'ساندويتش لحم', items: [
                 {name: 'ستيك مشوي', description: 'قطع بيف فيليه مشوي - صوص تكساس - خس - مشروم - خيار مخلل – بصل', price: 195},
@@ -179,7 +179,7 @@ export const translations: { [key: string]: Translations } = {
         header: {
             slogan: "We offer you dishes made with love, fresh ingredients, and an unforgettable experience! 💚",
             availability: "Waiting for you to enjoy together",
-            timings: "3:00 AM - 11:00 AM",
+            timings: "11:00 AM - 3:00 AM",
             address: "Tanta, 306 St., City Club Wall, from the Corniche",
             phone: "01000167408",
         },

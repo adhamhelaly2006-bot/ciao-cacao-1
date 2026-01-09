@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { MenuCategory } from '../types';
 
@@ -10,7 +9,7 @@ interface NavigationProps {
 
 const Navigation: React.FC<NavigationProps> = ({ categories, activeCategory, scrollToCategory }) => {
     return (
-        <nav className="sticky top-0 bg-white backdrop-blur-sm z-10 shadow-sm">
+        <nav className="sticky top-0 bg-white/80 backdrop-blur-sm z-10 shadow-sm transition-colors duration-300">
             <div className="container mx-auto px-4 py-3 flex items-center gap-3 overflow-x-auto scrollbar-hide whitespace-nowrap">
                 {categories.map(category => {
                     const isActive = activeCategory === category.id;
